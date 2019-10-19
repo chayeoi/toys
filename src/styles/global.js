@@ -48,6 +48,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  main { display: block; }
+
   input[type="search"]::-webkit-search-decoration,
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-results-button,
