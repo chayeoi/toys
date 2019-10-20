@@ -9,7 +9,7 @@ const S = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 48px;
+    padding-top: 64px;
   `,
 };
 

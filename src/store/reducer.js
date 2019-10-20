@@ -17,11 +17,13 @@ const reducer = (state, action) => {
         ...state,
         user: action.payload.user,
         repos: action.payload.repos,
+        loading: false,
       };
     case 'FETCH_USER_FAILURE':
       return {
         ...state,
         error: action.payload.error,
+        loading: false,
       };
     case 'INIT_USER':
       return {
