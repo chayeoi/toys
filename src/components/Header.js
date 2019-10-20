@@ -16,7 +16,7 @@ const S = {
   `,
   Title: styled.h1`
     color: #FFF;
-    font-size: 19px;
+    font-size: ${({ theme }) => theme.typography.pxToRem(18)};
     font-weight: 400;
   `,
   Nav: styled.nav``,
