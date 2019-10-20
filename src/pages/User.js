@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
 import { get } from 'lodash/fp';
 
 import {
@@ -7,6 +8,12 @@ import {
 } from '../components';
 import { useDispatch, useSelector } from '../hooks';
 import * as services from '../services';
+
+const S = {
+  UserInfo: styled(UserInfo)`
+    margin-bottom: 64px;
+  `,
+};
 
 const User = () => {
   const user = useSelector((state) => state.user);
@@ -55,7 +62,7 @@ const User = () => {
   return (
     <>
       <div>
-        {user && <UserInfo user={user} repos={repos} />}
+        {user && <S.UserInfo user={user} repos={repos} />}
         {repos && <Repos repos={repos} />}
       </div>
       {loading && <Loader />}

@@ -38,24 +38,26 @@ const S = {
     align-items: center;
   `,
   Attribute: styled.p`
-    margin-right: 2rem;
+    margin-right: 4rem;
     color: #999;
     font-size: 1.25rem;
   `,
   Value: styled.p`
     display: flex;
+    align-items: center;
     ::before {
       content: '';
       display: block;
-      width: 16px;
+      width: 12px;
       height: 16px;
+      margin-right: 4px;
       background: url(${star}) no-repeat;
     }
   `,
 };
 
-const UserInfo = React.memo(({ repos, user }) => (
-  <S.Wrapper>
+const UserInfo = React.memo(({ className, repos, user }) => (
+  <S.Wrapper className={className}>
     <S.Anchor to={user.html_url}>
       <S.UserName>
         {user.login}
@@ -78,6 +80,7 @@ const UserInfo = React.memo(({ repos, user }) => (
 ));
 
 UserInfo.propTypes = {
+  className: PropTypes.string,
   repos: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     full_name: PropTypes.string,
@@ -92,6 +95,7 @@ UserInfo.propTypes = {
 };
 
 UserInfo.defaultProps = {
+  className: undefined,
   repos: null,
   user: null,
 };

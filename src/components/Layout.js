@@ -10,6 +10,7 @@ const S = {
     flex-direction: column;
     align-items: center;
     padding-top: 64px;
+    padding-bottom: 32px;
   `,
 };
 
