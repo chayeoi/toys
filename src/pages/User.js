@@ -51,7 +51,9 @@ const User = () => {
     fetchUser();
   }, [dispatch, params.user]);
 
-  if (get('response.status', error) === 403) {
+  useEffect(() => () => dispatch({ type: 'INIT_ERROR' }), [dispatch]);
+
+  if (get('response', error)) {
     return (
       <ErrorMessage>
         {error.response.data.message}

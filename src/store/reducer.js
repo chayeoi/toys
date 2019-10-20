@@ -30,6 +30,11 @@ const reducer = (state, action) => {
         ...state,
         user: null,
       };
+    case 'INIT_ERROR':
+      return {
+        ...state,
+        error: null,
+      };
     default:
       return state;
   }
